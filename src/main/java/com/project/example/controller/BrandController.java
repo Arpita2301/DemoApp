@@ -18,6 +18,7 @@ public class BrandController {
     @PostMapping(path = "/createBrand")
     public String createBrand(@RequestParam String brandId,
                               @RequestParam String brandName) {
+        //test comment
         brandService.createBrand(brandId, brandName);
         return "Success!!!";
     }
