@@ -27,7 +27,7 @@ public class CategoryController {
     public CategoryDTO getCategory(@RequestParam String cName){
         return categoryService.getCategory(cName);
     }
-
+///get category
     @PostMapping(path = "/createCategory")
     public String createCategory(@RequestParam String c_id,
                                  @RequestParam String c_name
