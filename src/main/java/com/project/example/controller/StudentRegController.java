@@ -23,7 +23,7 @@ public class StudentRegController {
                              @RequestParam String stud_name,
                              @RequestParam String stud_rollNo,
                              @RequestParam String stud_branch){
-
+        //create student
         studentService.createStudent(stud_id, stud_name,  stud_rollNo, stud_branch);
 
         return "success";

@@ -21,9 +21,8 @@ public class BrandController {
         //test comment
         //second comment
         brandService.createBrand(brandId, brandName);
-        //for merge test
+        System.out.println("brand Created Successfully");
         return "Success!!!";
     }
 }
-
 
