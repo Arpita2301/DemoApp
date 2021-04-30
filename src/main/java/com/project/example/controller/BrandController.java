@@ -21,8 +21,9 @@ public class BrandController {
         //test comment
         //second comment
         brandService.createBrand(brandId, brandName);
-        System.out.println("brand Created Successfully");
+        System.out.println("Brand Created Successfully");
+
+
         return "Success!!!";
     }
 }
-
