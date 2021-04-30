@@ -20,6 +20,7 @@ public class BrandController {
                               @RequestParam String brandName) {
         //test comment
         brandService.createBrand(brandId, brandName);
+        //for merge test
         return "Success!!!";
     }
 }
