@@ -40,9 +40,11 @@ public class CategoryController {
     public String createCategoryWithBarnd(@RequestParam String cId,
                                           @RequestParam String cName,
                                           @RequestParam List<String> brandList){
+        //create category with brand
         categoryService.createCategoryWithBarnd(cId, cName, brandList);
 
         return "Successfull!!!";
+
     }
 
 
