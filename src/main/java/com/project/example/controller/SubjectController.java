@@ -23,7 +23,7 @@ public class SubjectController {
                                 ){
 
         subjectService.createSubject(sub_id, sub_name);
-
+        //create Subject
         return "success";
     }
     @GetMapping(path = "/getAllSubject")
