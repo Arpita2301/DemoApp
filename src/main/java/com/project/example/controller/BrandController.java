@@ -1,11 +1,13 @@
 package com.project.example.controller;
 
+import com.project.example.entity.Brand;
+import com.project.example.entity.Student;
+import com.project.example.entity.Subject;
 import com.project.example.services.BrandService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/brand")
@@ -25,5 +27,9 @@ public class BrandController {
 
 
         return "Success!!!";
+    }
+    @GetMapping(path = "/getAllBrands")
+    public List<Brand> getAllBrands(){
+        return brandService.getBrand();
     }
 }
