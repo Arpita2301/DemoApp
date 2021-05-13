@@ -1,6 +1,8 @@
 package com.project.example.converter;
 
+import com.project.example.DTO.BrandDTO;
 import com.project.example.DTO.SubjectDTO;
+import com.project.example.entity.Brand;
 import com.project.example.entity.Subject;
 import org.modelmapper.ModelMapper;
 
@@ -12,6 +14,14 @@ public class SubjectConverter {
     public static SubjectDTO getSubjectName(Optional<Subject> subject){
         ModelMapper modelMapper = new ModelMapper();
        // SubjectDTO subjectDTO = modelMapper.map(subject, SubjectDTO.class);
+        return new ModelMapper().map(subject, new com.google.common.reflect.TypeToken<SubjectDTO>() {
+        }.getType());
+
+    }
+
+    public static SubjectDTO getSubName(Subject subject){
+        ModelMapper modelMapper = new ModelMapper();
+        // SubjectDTO subjectDTO = modelMapper.map(subject, SubjectDTO.class);
         return new ModelMapper().map(subject, new com.google.common.reflect.TypeToken<SubjectDTO>() {
         }.getType());
 

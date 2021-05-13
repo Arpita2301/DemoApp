@@ -11,5 +11,6 @@ import java.util.List;
 @Repository
 public interface SubjectRepository extends JpaRepository<Subject, String> {
     @Query(value = "SELECT * FROM subject where sub_id = :#{#subId}" , nativeQuery = true)
-    public List<Subject> findBySubId(String subId);
+    public Subject findBySubId(String subId);
+
 }

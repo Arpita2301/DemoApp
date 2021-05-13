@@ -36,4 +36,10 @@ public class SubjectController {
 
         return subjectService.getSubjectById(sub_id);
     }
+
+    @GetMapping(path = "/getSubjectNameById")
+    public SubjectDTO getSubjectNameById(@RequestParam String subId){
+
+        return subjectService.getSubjectNameById(subId);
+    }
 }
