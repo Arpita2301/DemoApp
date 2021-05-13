@@ -1,5 +1,6 @@
 package com.project.example.controller;
 
+import com.project.example.DTO.BrandDTO;
 import com.project.example.entity.Brand;
 import com.project.example.entity.Student;
 import com.project.example.entity.Subject;
@@ -31,5 +32,11 @@ public class BrandController {
     @GetMapping(path = "/getAllBrands")
     public List<Brand> getAllBrands(){
         return brandService.getBrand();
+    }
+
+    @GetMapping(path = "/getBrandById")
+    public BrandDTO getBrandById(@RequestParam String brandId){
+
+        return brandService.getBrandById(brandId);
     }
 }

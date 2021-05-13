@@ -87,7 +87,7 @@ public class FileUploadController {
 
     @GetMapping("/files/{id}")
     public FileUpload getFile1(
-                                        @PathVariable String fId) {
+            @PathVariable String fId) {
         System.out.println(fId);
       return fileUploadService.getFile(fId);
 

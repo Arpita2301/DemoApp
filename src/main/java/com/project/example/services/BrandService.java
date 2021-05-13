@@ -1,7 +1,12 @@
 package com.project.example.services;
 
+import com.project.example.DTO.BrandDTO;
+import com.project.example.DTO.SubjectDTO;
+import com.project.example.converter.BrandConverter;
+import com.project.example.converter.SubjectConverter;
 import com.project.example.entity.Brand;
 import com.project.example.entity.Category;
+import com.project.example.entity.Student;
 import com.project.example.entity.Subject;
 import com.project.example.repository.BrandRepository;
 import com.project.example.repository.CategoryRepository;
@@ -28,5 +33,11 @@ public class BrandService {
 
     public List<Brand> getBrand() {
         return brandRepository.findAll();
+    }
+
+    public BrandDTO getBrandById(String brandId) {
+        Brand brand = brandRepository.findByBrandId(brandId);
+        BrandDTO brandDTO = BrandConverter.getBrandName(brand);
+        return brandDTO;
     }
 }
