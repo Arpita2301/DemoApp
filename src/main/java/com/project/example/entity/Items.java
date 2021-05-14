@@ -33,5 +33,9 @@ public class Items {
     @Column(name = "total_discount")
     private Double totalDiscount;
 
+    public Items(){
+
+    }
+
 
 }

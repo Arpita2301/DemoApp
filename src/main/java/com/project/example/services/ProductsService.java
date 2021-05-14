@@ -3,7 +3,6 @@ package com.project.example.services;
 import com.project.example.DTO.OrderInfo;
 import com.project.example.DTO.ProductsDTO;
 import com.project.example.converter.ProductsConverter;
-import com.project.example.converter.SubjectConverter;
 import com.project.example.entity.Brand;
 import com.project.example.entity.Category;
 import com.project.example.entity.Items;
@@ -137,5 +136,10 @@ public class ProductsService {
 
             itemsRepository.save(items);
         }
+    }
+
+
+    public List<Items> getOrderList() {
+        return itemsRepository.findAll();
     }
 }

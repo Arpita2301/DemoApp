@@ -1,6 +1,9 @@
 package com.project.example.controller;
 
+import com.project.example.DTO.CategoryDTO;
+import com.project.example.DTO.OrderInfo;
 import com.project.example.DTO.ProductsDTO;
+import com.project.example.entity.Items;
 import com.project.example.entity.Products;
 import com.project.example.services.CategoryService;
 import com.project.example.services.ProductsService;
@@ -79,6 +82,11 @@ public class ProductsController<pubilc> {
                                   @RequestParam List<Double> discountPriceList){
         productsService.CreateOrderList(productList,NoOfItemsList, priceList,discountPriceList);
                 return("Order Placed Successfully");
+    }
+
+    @GetMapping(path = "/getOrderList")
+    public List<Items> getOrderList(){
+        return productsService.getOrderList();
     }
 
 }
