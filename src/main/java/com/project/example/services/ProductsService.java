@@ -142,4 +142,8 @@ public class ProductsService {
     public List<Items> getOrderList() {
         return itemsRepository.findAll();
     }
+
+    public Items getOrderDetailsById(String itemId) {
+        return itemsRepository.findByItemId(itemId);
+    }
 }

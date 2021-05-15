@@ -1,7 +1,5 @@
 package com.project.example.controller;
 
-import com.project.example.DTO.CategoryDTO;
-import com.project.example.DTO.OrderInfo;
 import com.project.example.DTO.ProductsDTO;
 import com.project.example.entity.Items;
 import com.project.example.entity.Products;
@@ -87,6 +85,12 @@ public class ProductsController<pubilc> {
     @GetMapping(path = "/getOrderList")
     public List<Items> getOrderList(){
         return productsService.getOrderList();
+    }
+
+    @GetMapping(path = "/getOrderDetailsById")
+    public Items getOrderDetailsById(@RequestParam String itemId){
+        Items result;
+        return result = productsService.getOrderDetailsById(itemId);
     }
 
 }

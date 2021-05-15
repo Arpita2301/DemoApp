@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ItemsRepository extends JpaRepository<Items, String> {
     @Query(value = "SELECT * FROM items where item_id = :#{#itemId}" , nativeQuery = true)
-    public Brand findByItemId(String itemId);
+    public Items findByItemId(String itemId);
 
 
 }
