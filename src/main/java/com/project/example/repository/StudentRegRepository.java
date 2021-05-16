@@ -12,4 +12,7 @@ import java.util.List;
 public interface StudentRegRepository  extends JpaRepository<Student, String> {
     @Query(value = "SELECT * FROM student where stud_id = :#{#studId}" , nativeQuery = true)
     public List<Student> findByStudId(String studId);
+
+    @Query(value = "SELECT * FROM student where stud_rollno = :#{#studRollno}" , nativeQuery = true)
+    public Student findByStudRollno(String studRollno);
 }
