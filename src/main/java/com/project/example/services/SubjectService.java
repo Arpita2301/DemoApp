@@ -1,5 +1,6 @@
 package com.project.example.services;
 
+import com.project.example.DTO.StudentDTO;
 import com.project.example.DTO.SubjectDTO;
 import com.project.example.converter.SubjectConverter;
 import com.project.example.entity.Student;
@@ -22,12 +23,12 @@ public class SubjectService {
     StudentRegRepository studentRegRepository;
 
 
-    public void createSubject(String sub_id, String sub_name) {
+    public void createSubject(String subId, String subName) {
         String studentId = "101";
         Student student = studentRegRepository.getOne(studentId);
         Subject subject = new Subject();
-        subject.setSub_id(sub_id);
-        subject.setSub_name(sub_name);
+        subject.setSubId(subId);
+        subject.setSubName(subName);
         // subject.setStudent(student);
         subjectRepository.save(subject);
     }
@@ -37,8 +38,8 @@ public class SubjectService {
         return subjectRepository.findAll();
     }
 
-    public SubjectDTO getSubjectById(String sub_id) {
-        Optional<Subject> subject = subjectRepository.findById(sub_id);
+    public SubjectDTO getSubjectById(String subId) {
+        Optional<Subject> subject = subjectRepository.findById(subId);
         SubjectDTO subjectDTO = SubjectConverter.getSubjectName(subject);
         return subjectDTO;
 
@@ -48,5 +49,15 @@ public class SubjectService {
         Subject subject =  subjectRepository.findBySubId(subId);
         SubjectDTO subjectDTO = SubjectConverter.getSubName(subject);
         return subjectDTO;
+    }
+
+    public void updateSubjectDetails(SubjectDTO subjectDTO) {
+        Subject subject = subjectRepository.findBySubId(subjectDTO.getSubId());
+
+        if(subject != null){
+            subject.setSubId(subjectDTO.getSubId());
+            subject.setSubName(subjectDTO.getSubName());
+            subjectRepository.save(subject);
+        }
     }
 }

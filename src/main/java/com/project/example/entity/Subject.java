@@ -13,10 +13,10 @@ public class Subject {
 
     @Id
     @Column
-    private String sub_id;
+    private String subId;
 
     @Column
-    private String sub_name;
+    private String subName;
 
 
    /* public Student getStudent() {

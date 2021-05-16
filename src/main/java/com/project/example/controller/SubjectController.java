@@ -1,6 +1,7 @@
 package com.project.example.controller;
 
 
+import com.project.example.DTO.StudentDTO;
 import com.project.example.DTO.SubjectDTO;
 import com.project.example.entity.Student;
 import com.project.example.entity.Subject;
@@ -32,14 +33,20 @@ public class SubjectController {
     }
 
     @GetMapping(path = "/getSubjectById")
-    public SubjectDTO getSubjectById(@RequestParam String sub_id){
+    public SubjectDTO getSubjectById(@RequestParam String subId){
 
-        return subjectService.getSubjectById(sub_id);
+        return subjectService.getSubjectById(subId);
     }
 
     @GetMapping(path = "/getSubjectNameById")
     public SubjectDTO getSubjectNameById(@RequestParam String subId){
 
         return subjectService.getSubjectNameById(subId);
+    }
+
+    @PostMapping(path = "/updateSubjectDetails")
+    public String updateSubjectDetails(@RequestBody SubjectDTO subjectDTO){
+        subjectService.updateSubjectDetails(subjectDTO);
+        return "Subject Details Udated Successfully";
     }
 }

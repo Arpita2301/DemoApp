@@ -9,11 +9,8 @@ import lombok.Setter;
 public class SubjectDTO {
 
 
-    private String sub_name;
-    private String sub_id;
-
-
-
+    private String subName;
+    private String subId;
 
 
 }
