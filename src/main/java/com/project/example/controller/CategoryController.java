@@ -51,6 +51,6 @@ public class CategoryController {
     @PostMapping(path = "/updateCategoryName")
     public String updateCategoryName(@RequestBody CategoryDTO categoryDTO){
         categoryService.updateCategoryName(categoryDTO);
-        return "Category Details Udated Successfully";
+        return "Category Details Updated Successfully";
     }
 }

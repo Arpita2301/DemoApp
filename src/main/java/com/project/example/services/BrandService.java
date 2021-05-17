@@ -40,4 +40,14 @@ public class BrandService {
         BrandDTO brandDTO = BrandConverter.getBrandName(brand);
         return brandDTO;
     }
+
+    public void updateBrandName(BrandDTO brandDTO) {
+
+        Brand brand = brandRepository.findByBrandId(brandDTO.getBrandId());
+
+        if(brand != null){
+            brand.setBrandName(brandDTO.getBrandName());
+            brandRepository.save(brand);
+        }
+    }
 }

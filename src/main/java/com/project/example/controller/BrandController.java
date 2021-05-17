@@ -1,6 +1,7 @@
 package com.project.example.controller;
 
 import com.project.example.DTO.BrandDTO;
+import com.project.example.DTO.CategoryDTO;
 import com.project.example.entity.Brand;
 import com.project.example.entity.Student;
 import com.project.example.entity.Subject;
@@ -38,5 +39,11 @@ public class BrandController {
     public BrandDTO getBrandById(@RequestParam String brandId){
 
         return brandService.getBrandById(brandId);
+    }
+
+    @PostMapping(path = "/updateBrandName")
+    public String updateBrandName(@RequestBody BrandDTO brandDTO){
+        brandService.updateBrandName(brandDTO);
+        return "Brand Details Updated Successfully";
     }
 }
