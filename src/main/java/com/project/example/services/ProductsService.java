@@ -1,5 +1,6 @@
 package com.project.example.services;
 
+import com.project.example.DTO.CategoryDTO;
 import com.project.example.DTO.OrderInfo;
 import com.project.example.DTO.ProductsDTO;
 import com.project.example.converter.ProductsConverter;
@@ -145,5 +146,15 @@ public class ProductsService {
 
     public Items getOrderDetailsById(String itemId) {
         return itemsRepository.findByItemId(itemId);
+    }
+
+
+    public void updateProductName(ProductsDTO productsDTO) {
+        Products products = productsRepository.findBypId(productsDTO.getPId());
+
+        if(products != null){
+            products.setPName(productsDTO.getPName());
+            productsRepository.save(products);
+        }
     }
 }

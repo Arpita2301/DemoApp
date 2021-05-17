@@ -7,6 +7,8 @@ import lombok.Setter;
 @Setter
 public class ProductsDTO {
     private String pName;
+    private String pId;
+    private String brandId;
     private CategoryDTO categoryDTO;
 
 

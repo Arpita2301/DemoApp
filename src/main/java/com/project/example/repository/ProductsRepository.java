@@ -14,6 +14,10 @@ public interface ProductsRepository extends JpaRepository<Products, String> {
     @Query(value = "SELECT * FROM products where c_id = :#{#cId}" , nativeQuery = true)
     public List<Products> findByCId(String cId);
 
+
+    @Query(value = "SELECT * FROM products where p_id = :#{#pId}" , nativeQuery = true)
+    public Products findBypId(String pId);
+
 //
     @Query(value = "SELECT products.p_id, products.p_name, category.c_id, category.c_name\n" +
             "FROM products\n" +

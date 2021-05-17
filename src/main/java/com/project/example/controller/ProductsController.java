@@ -1,5 +1,6 @@
 package com.project.example.controller;
 
+import com.project.example.DTO.CategoryDTO;
 import com.project.example.DTO.ProductsDTO;
 import com.project.example.entity.Items;
 import com.project.example.entity.Products;
@@ -91,6 +92,13 @@ public class ProductsController<pubilc> {
     public Items getOrderDetailsById(@RequestParam String itemId){
         Items result;
         return result = productsService.getOrderDetailsById(itemId);
+    }
+
+
+    @PostMapping(path = "/updateProductName")
+    public String updateProductName(@RequestBody ProductsDTO productsDTO){
+        productsService.updateProductName(productsDTO);
+        return "Product Details Updated Successfully";
     }
 
 }
