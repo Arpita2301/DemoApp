@@ -8,5 +8,6 @@ import lombok.Setter;
 @Getter
 public class CategoryDTO {
     private String cName;
+    private String cId;
     private Brand brand;
 }

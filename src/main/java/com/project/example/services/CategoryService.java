@@ -10,6 +10,7 @@ import com.project.example.converter.ProductsConverter;
 import com.project.example.entity.Brand;
 import com.project.example.entity.Category;
 import com.project.example.entity.Products;
+import com.project.example.entity.Subject;
 import com.project.example.repository.BrandRepository;
 import com.project.example.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,5 +66,15 @@ public class CategoryService {
         }
         category.setBrand(brandList1);
         categoryRepository.save(category);
+    }
+
+    public void updateCategoryName(CategoryDTO categoryDTO) {
+        Category category = categoryRepository.findByCId(categoryDTO.getCId());
+
+        if(category != null){
+            category.setCName(categoryDTO.getCName());
+            categoryRepository.save(category);
+        }
+
     }
 }

@@ -2,6 +2,7 @@ package com.project.example.controller;
 
 import com.project.example.DTO.BrandDTO;
 import com.project.example.DTO.CategoryDTO;
+import com.project.example.DTO.SubjectDTO;
 import com.project.example.entity.Brand;
 import com.project.example.entity.Category;
 import com.project.example.services.CategoryService;
@@ -45,5 +46,11 @@ public class CategoryController {
 
         return "Successfull!!!";
 
+    }
+
+    @PostMapping(path = "/updateCategoryName")
+    public String updateCategoryName(@RequestBody CategoryDTO categoryDTO){
+        categoryService.updateCategoryName(categoryDTO);
+        return "Category Details Udated Successfully";
     }
 }
