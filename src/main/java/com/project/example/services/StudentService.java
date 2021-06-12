@@ -30,6 +30,7 @@ StudentRegRepository studentRegRepository;
  }
 
  public List<Student> getStudentById(String studId){
+
      return  studentRegRepository.findByStudId(studId);
  }
 

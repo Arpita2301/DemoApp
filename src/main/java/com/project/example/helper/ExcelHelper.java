@@ -55,6 +55,11 @@ public class ExcelHelper {
                     Cell currentCell = cellsInRow.next();
 
                     switch (cellIdx) {
+
+//                        case 0:
+//                            questionAnswer.setQId((long) currentCell.getNumericCellValue());
+//                            break;
+
                         case 0:
                             questionAnswer.setQId(Integer.toString((int)Math.round(currentCell.getNumericCellValue()))
                             );
