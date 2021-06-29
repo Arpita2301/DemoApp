@@ -18,7 +18,7 @@ import java.util.List;
 public class QuestionAnswerController {
 
     @Autowired
-    QuestionAnswerService questionAnswerService;
+    private QuestionAnswerService questionAnswerService;
 
     @PostMapping("/upload")
     public ResponseEntity<ResponseMessage> uploadFile(@RequestParam("file") MultipartFile file) {

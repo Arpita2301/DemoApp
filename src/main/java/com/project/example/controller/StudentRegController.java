@@ -12,7 +12,7 @@ import java.util.List;
 @RequestMapping("/student")
 public class StudentRegController {
     @Autowired
-    public StudentService studentService;
+    private StudentService studentService;
 
     @GetMapping(path = "/getAllStudent")
     public List<Student> getAllStudent(){

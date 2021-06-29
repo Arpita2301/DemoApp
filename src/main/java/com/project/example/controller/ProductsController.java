@@ -16,10 +16,10 @@ import java.util.List;
 public class ProductsController<pubilc> {
 
     @Autowired
-    public ProductsService productsService;
+    private ProductsService productsService;
 
     @Autowired
-    public CategoryService categoryService;
+    private CategoryService categoryService;
 
     @PostMapping(path = "/createProducts")
     public String createProducts(@RequestParam String p_id,

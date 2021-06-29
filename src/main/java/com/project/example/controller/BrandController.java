@@ -17,7 +17,7 @@ import java.util.List;
 public class BrandController {
 
     @Autowired
-    BrandService brandService;
+    private BrandService brandService;
 
     @PostMapping(path = "/createBrand")
     public String createBrand(@RequestParam String brandId,

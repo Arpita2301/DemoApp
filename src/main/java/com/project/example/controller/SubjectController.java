@@ -16,7 +16,7 @@ import java.util.List;
 public class SubjectController {
 
     @Autowired
-    SubjectService subjectService;
+    private SubjectService subjectService;
 
     @PostMapping(path = "/createSubject")
     public String createStudent(@RequestParam String sub_id,

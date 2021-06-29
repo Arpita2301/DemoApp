@@ -17,7 +17,7 @@ import java.util.List;
 public class CategoryController {
 
     @Autowired
-    public CategoryService categoryService;
+    private CategoryService categoryService;
 
 //    @GetMapping(path = "/getCategory")
 //    public Category getCategory(@RequestParam String cName){

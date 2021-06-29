@@ -24,7 +24,7 @@ import java.util.stream.Stream;
 public class FileUploadController {
 
     @Autowired
-    public FileUploadService fileUploadService;
+    private FileUploadService fileUploadService;
 
     @PostMapping("/upload")
     public ResponseEntity<ResponseMessage> fileUpload(@RequestParam("file") MultipartFile file) {
