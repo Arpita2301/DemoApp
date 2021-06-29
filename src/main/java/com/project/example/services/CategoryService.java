@@ -24,10 +24,10 @@ public class CategoryService {
 
 
     @Autowired
-    public CategoryRepository categoryRepository;
+    private CategoryRepository categoryRepository;
 
     @Autowired
-    public BrandRepository brandRepository;
+    private BrandRepository brandRepository;
 
 
 //    public static List<Category> test(String p_id) {

@@ -20,7 +20,7 @@ import java.util.List;
 public class BrandService {
 
     @Autowired
-    BrandRepository brandRepository;
+    private BrandRepository brandRepository;
 
 
     public void createBrand(String brandId, String brandName){

@@ -23,16 +23,16 @@ public class ProductsService {
 
 
     @Autowired
-    public ProductsRepository productsRepository;
+    private ProductsRepository productsRepository;
 
     @Autowired
-    public CategoryRepository categoryRepository;
+    private CategoryRepository categoryRepository;
 
     @Autowired
-    public BrandRepository brandRepository;
+    private BrandRepository brandRepository;
 
     @Autowired
-    public ItemsRepository itemsRepository;
+    private ItemsRepository itemsRepository;
 
     public void createProducts(String p_id, String p_name){
      /*   Products products = new Products();

@@ -12,7 +12,7 @@ import java.util.List;
 public class StudentService {
 
 @Autowired
-StudentRegRepository studentRegRepository;
+private StudentRegRepository studentRegRepository;
 
  public List<Student> getStudent(){
     // List<Student> studentList =  studentRegRepository.findAll();

@@ -21,7 +21,7 @@ import java.util.stream.Stream;
 @Service
 public class FileUploadService {
     @Autowired
-    public FileUploadRepository fileUploadRepository;
+    private FileUploadRepository fileUploadRepository;
 
 
     public FileUpload store(MultipartFile file) throws IOException {

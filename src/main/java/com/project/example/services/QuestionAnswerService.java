@@ -14,7 +14,7 @@ import java.util.List;
 public class QuestionAnswerService {
 
     @Autowired
-    QuestionAnswerRepository questionAnswerRepository;
+    private QuestionAnswerRepository questionAnswerRepository;
 
     public void save(MultipartFile file) {
         try {

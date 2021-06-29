@@ -17,10 +17,10 @@ import java.util.Optional;
 public class SubjectService {
 
     @Autowired
-    SubjectRepository subjectRepository;
+    private SubjectRepository subjectRepository;
 
     @Autowired
-    StudentRegRepository studentRegRepository;
+    private StudentRegRepository studentRegRepository;
 
 
     public void createSubject(String subId, String subName) {
