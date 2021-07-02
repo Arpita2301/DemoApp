@@ -7,6 +7,7 @@ import com.project.example.entity.Products;
 import com.project.example.services.CategoryService;
 import com.project.example.services.ProductsService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,7 +22,7 @@ public class ProductsController<pubilc> {
     @Autowired
     private CategoryService categoryService;
 
-    @PostMapping(path = "/createProducts")
+    @PostMapping(path = "/createProducts", produces = { MediaType.APPLICATION_JSON_VALUE })
     public String createProducts(@RequestParam String p_id,
                                  @RequestParam String p_name
                                 ){
@@ -35,7 +36,7 @@ public class ProductsController<pubilc> {
         productsService.productsIntoCategory(p_id, c_name);
     }*/
 
-    @PostMapping(path = "/createProducts1")
+    @PostMapping(path = "/createProducts1", produces = { MediaType.APPLICATION_JSON_VALUE })
     public String createProducts1(@RequestParam String productName,
                                @RequestParam String brandId,
                                @RequestParam CategoryEnum categoryEnum){

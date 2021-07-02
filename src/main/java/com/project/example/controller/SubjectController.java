@@ -7,6 +7,7 @@ import com.project.example.entity.Student;
 import com.project.example.entity.Subject;
 import com.project.example.services.SubjectService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,7 +19,7 @@ public class SubjectController {
     @Autowired
     private SubjectService subjectService;
 
-    @PostMapping(path = "/createSubject")
+    @PostMapping(path = "/createSubject", produces = { MediaType.APPLICATION_JSON_VALUE })
     public String createStudent(@RequestParam String sub_id,
                                 @RequestParam String sub_name
                                 ){
@@ -27,18 +28,18 @@ public class SubjectController {
         //create Subject
         return "success";
     }
-    @GetMapping(path = "/getAllSubject")
+    @GetMapping(path = "/getAllSubject", produces = { MediaType.APPLICATION_JSON_VALUE })
     public List<Subject> getAllSubject(){
         return subjectService.getSubject();
     }
 
-    @GetMapping(path = "/getSubjectById")
+    @GetMapping(path = "/getSubjectById", produces = { MediaType.APPLICATION_JSON_VALUE })
     public SubjectDTO getSubjectById(@RequestParam String subId){
 
         return subjectService.getSubjectById(subId);
     }
 
-    @GetMapping(path = "/getSubjectNameById")
+    @GetMapping(path = "/getSubjectNameById", produces = { MediaType.APPLICATION_JSON_VALUE })
     public SubjectDTO getSubjectNameById(@RequestParam String subId){
 
         return subjectService.getSubjectNameById(subId);

@@ -7,6 +7,7 @@ import com.project.example.entity.Brand;
 import com.project.example.entity.Category;
 import com.project.example.services.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -24,12 +25,12 @@ public class CategoryController {
 //        return categoryService.getCategory(cName);
 //    }
 
-    @GetMapping(path = "/getCategory")
+    @GetMapping(path = "/getCategory", produces = { MediaType.APPLICATION_JSON_VALUE })
     public CategoryDTO getCategory(@RequestParam String cName){
         return categoryService.getCategory(cName);
     }
 ///get category
-    @PostMapping(path = "/createCategory")
+    @PostMapping(path = "/createCategory", produces = { MediaType.APPLICATION_JSON_VALUE })
     public String createCategory(@RequestParam String c_id,
                                  @RequestParam String c_name
                                  ){
@@ -37,7 +38,7 @@ public class CategoryController {
         return "Success!!!";
     }
 
-    @PostMapping(path = "/createCategoryWithBrand")
+    @PostMapping(path = "/createCategoryWithBrand", produces = { MediaType.APPLICATION_JSON_VALUE })
     public String createCategoryWithBarnd(@RequestParam String cId,
                                           @RequestParam String cName,
                                           @RequestParam List<String> brandList){
@@ -48,7 +49,7 @@ public class CategoryController {
 
     }
 
-    @PostMapping(path = "/updateCategoryName")
+    @PostMapping(path = "/updateCategoryName", produces = { MediaType.APPLICATION_JSON_VALUE })
     public String updateCategoryName(@RequestBody CategoryDTO categoryDTO){
         categoryService.updateCategoryName(categoryDTO);
         return "Category Details Updated Successfully";
